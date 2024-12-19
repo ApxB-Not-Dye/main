@@ -1,0 +1,268 @@
+/* Основные стили для страницы */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #eaeaea;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Стили навигации */
+nav {
+  background-color: #333;
+  color: #fff;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: flex-start; /* Выравнивание по левому краю */
+  flex-wrap: wrap;
+  padding-left: 20px; /* Отступ слева для эстетики */
+}
+
+nav li {
+  position: relative;
+}
+
+nav a {
+  display: block;
+  padding: 15px 20px;
+  color: inherit;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+nav a:hover,
+nav a:focus {
+  background-color: #555;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  background-color: #444;
+  top: 100%;
+  left: 0;
+  min-width: 150px;
+  z-index: 1;
+}
+
+nav li:hover .dropdown {
+  display: block;
+}
+
+.dropdown li {
+  width: 100%;
+}
+
+#modal.hidden {
+  display: none;
+}
+
+/* Стили для модального окна, похожие на стиль навигационного меню */
+#modal {
+ /* По умолчанию модальное окно скрыто */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Более тёмный фон */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.modal-content {
+  background-color: #333; /* Цвет как у верхнего меню */
+  color: #fff; /* Белый текст */
+  padding: 20px;
+  border-radius: 5px;
+  width: 300px;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  cursor: pointer;
+  font-size: 18px;
+  color: #fff; /* Белый цвет креста для закрытия */
+}
+
+.modal-content label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #ccc; /* Светлый текст для меток */
+}
+
+.modal-content input {
+  width: 93.5%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 3px;
+  background-color: #444; /* Тёмный цвет фона для полей */
+  color: #fff; /* Белый текст для полей */
+}
+
+.modal-content button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  background-color: #555; /* Серый цвет кнопки */
+  color: #fff; /* Белый цвет текста кнопки */
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.modal-content button:hover,
+.modal-content button:focus {
+  background-color: #777; /* Более светлый цвет при наведении */
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+
+/* Стили заголовка */
+header {
+  padding: 50px 20px;
+  background-color: #eaeaea;
+  position: relative; /* Позволяет позиционирование дочерних элементов */
+}
+
+header h1 {
+  margin: 0 0 20px;
+  font-size: 2.5em;
+  color: #444;
+  text-align: center; /* Центрирование заголовка */
+}
+
+header h2 {
+  margin: 0 0 20px;
+  font-size: 1.5em;
+  color: #888888;
+  text-align: center; /* Центрирование заголовка */
+}
+
+.main-content {
+  text-align: left; /* Выравнивание основного текста по левому краю */
+  margin-bottom: 20px;
+}
+
+.address {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  text-align: right; /* Выравнивание адреса по правому нижнему углу */
+}
+
+
+/* Загрузчик */
+/* Стили для загрузчика */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.loader {
+  width: 20px;
+  height: 20px;
+  background-color: grey;
+  border-radius: 50%;
+  animation: bounce 0.6s infinite alternate;
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-30px);
+  }
+}
+
+/*Блок с адресом*/
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  height: 210px; /* Укажите высоту по необходимости */
+}
+
+.spacing {
+  flex-grow: 1; /* Занимает всё доступное пространство */
+}
+
+.address {
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* Для адаптивности, если хотите изменить параметры для различных экранов */
+@media (max-width: 480px) {
+  .footer {
+    height: 480px; /* Меньшая высота на планшетах */
+  }
+
+  .address {
+    padding: 5px; /* Меньше отступы на планшетах */
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    height: 60px; /* Меньшая высота на мобильных устройствах */
+  }
+
+  .address {
+    padding: 3px; /* Еще меньше отступы на мобильных устройствах */
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    padding: 0; /* Убираем отступ на мобильных */
+  }
+
+  nav a {
+    text-align: left; /* Выравнивание по левому краю */
+  }
+
+  .dropdown {
+    position: static;
+  }
+}
+
